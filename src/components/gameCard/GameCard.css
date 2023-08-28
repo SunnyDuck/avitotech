@@ -1,0 +1,21 @@
+.card-wrapper{
+    background-color: rgb(51, 56, 61);
+    border-radius: 10px;
+    display: grid;
+    color: rgb(170, 170, 170);
+    font-family: monospace;
+    cursor: pointer;
+    height: 400px;
+    justify-items: center;
+}
+
+img{
+    width: 100%;
+}
+
+.card-game-name{
+    font-size: 30px;
+}
+
+.card-game-description{
+}

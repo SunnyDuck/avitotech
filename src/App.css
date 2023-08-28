@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.app-wrapper{
+    background-color: rgb(40, 43, 48);
+    color: rgb(170, 170, 170);
+}
+
+.cards-wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 450px);
+    grid-gap: 20px;
+    justify-content: center;
+    align-content: center;
+}
