@@ -1,6 +1,7 @@
 import {AppDispatch} from "../store";
 import axios, {AxiosHeaders} from "axios";
 import {gameSlice} from "./GamesSlice"
+import {IFilters} from "../../models/IFilters";
 
 export const instance = axios.create({
     baseURL: 'https://free-to-play-games-database.p.rapidapi.com/api/games',
@@ -10,14 +11,14 @@ export const instance = axios.create({
     } as AxiosHeaders
 });
 
-export const fetchGames = () => async (dispatch: AppDispatch) => {
+export const fetchGames = (filters: IFilters) => async (dispatch: AppDispatch) => {
     try {
         const response = await instance.get('');
         dispatch(gameSlice.actions.gamesFetching())
         console.log(response.data);
         dispatch(gameSlice.actions.gamesFetchingSuccess(response.data))
     } catch (e) {
-        console.error(e.message);
+        alert(e.message)
         dispatch(gameSlice.actions.gamesFetchingError(e.message))
     }
 }
