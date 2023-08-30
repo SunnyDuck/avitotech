@@ -4,6 +4,7 @@ import {fetchGames} from "./store/reducers/ActionCreator";
 import './App.css'
 import Header from "./components/header/Header";
 import MainPageCards from "./components/mainPageCards/MainPageCards";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const App = () => {
 
@@ -16,7 +17,12 @@ const App = () => {
     return (
         <div className='app-wrapper'>
             <Header/>
-            <MainPageCards/>
+            <BrowserRouter>
+                <Routes>
+                    <Route path='' element={<MainPageCards/>}/>
+                    <Route path='/'/>
+                </Routes>
+            </BrowserRouter>
         </div>
     );
 };

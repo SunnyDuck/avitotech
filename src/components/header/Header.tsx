@@ -2,29 +2,29 @@ import React, {useEffect, useState} from 'react';
 import {Autocomplete, TextField} from "@mui/material";
 import {useAppDispatch, useAppSelector} from "../../hooks/redux";
 import './Header.css'
-import {fetchGames} from "../../store/reducers/ActionCreator";
+import {fetchFiltersGames} from "../../store/reducers/ActionCreator";
 import {IFilters} from "../../models/IFilters";
+import {GenreTagsList} from "../../models/GenreTagsList";
+import {SortedGamesTagsList} from "../../models/SortedGamesTagsList";
 
 
 
 
 const Header = () => {
 
-    const {platforms, genre, releaseDate} = useAppSelector(state => state.gameReducer)
-    //const [selectPlatform, setSelectPlatform] = useState<string>(' ')
-    //const [selectGenre, setSelectGenre] = useState<string>(' ')
-    //const [selectReleaseDate, setSelectReleaseDate] = useState<string>(' ')
+    const {platforms} = useAppSelector(state => state.gameReducer)
     const [filters, setFilters] = useState<IFilters>({
-        selectedGenre: '',
-        selectedPlatform: '',
-        selectedReleaseDate: ''
+        selectedGenre: null,
+        selectedPlatform: null,
+        selectedReleaseDate: null
     })
 
     const dispatch = useAppDispatch()
 
     useEffect(() => {
-
+        dispatch(fetchFiltersGames(filters))
     }, [filters])
+
 
     return (
         <header>
@@ -39,12 +39,29 @@ const Header = () => {
                         label="Платформа"
                     />}
                 onChange={(event: any, newValue: string | null) => {
-                    setFilters({...filters, selectedPlatform: newValue})
+                    switch (newValue){
+                        case 'PC (Windows)': {
+                            setFilters({...filters, selectedPlatform: 'pc'})
+                            break;
+                        }
+                        case 'Web Browser': {
+                            setFilters({...filters, selectedPlatform: 'browser'})
+                            break;
+                        }
+                        case 'PC (Windows), Web Browser': {
+                            setFilters({...filters, selectedPlatform: 'all'})
+                            break
+                        }
+                        default: {
+                            setFilters({...filters, selectedPlatform: 'all'})
+                            break
+                        }
+                    }
                 }}
             />
             <Autocomplete
                 id="combo-box-demo2"
-                options={genre}
+                options={Object.values(GenreTagsList)}
                 sx={{ width: '33%' }}
                 renderInput={(params) =>
                     <TextField
@@ -58,13 +75,13 @@ const Header = () => {
             />
             <Autocomplete
                 id="combo-box-demo3"
-                options={releaseDate}
+                options={Object.values(SortedGamesTagsList)}
                 sx={{ width: '33%' }}
                 renderInput={(params) =>
                     <TextField
                         fullWidth
                         {...params}
-                        label="Дата выхода"
+                        label="Сортировать как..."
                     />}
                 onChange={(event: any, newValue: string | null) => {
                     setFilters({...filters, selectedReleaseDate: newValue})

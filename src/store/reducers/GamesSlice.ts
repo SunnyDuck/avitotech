@@ -1,21 +1,12 @@
 import {IGame} from "../../models/IGame";
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
+import {IGameState} from "../../models/IGameState";
 
-interface GameState {
-    games: IGame[],
-    platforms: string[],
-    genre: string[],
-    releaseDate: string[],
-    loading: boolean,
-    error: string
-}
-
-const initialState: GameState = {
+const initialState: IGameState = {
     games: [ ],
     platforms: [ ],
     genre: [ ],
-    releaseDate: [ ],
-    loading: false,
+    loading: true,
     error: ''
 }
 
@@ -35,9 +26,6 @@ export const gameSlice = createSlice({
                 }
                 if(!state.genre.includes(game.genre)){
                     state.genre.push(game.genre)
-                }
-                if(!state.releaseDate.includes(game.release_date.slice(0, 4))){
-                    state.releaseDate.push(game.release_date.slice(0, 4))
                 }
             })
             state.error = ''
