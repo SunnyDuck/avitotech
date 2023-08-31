@@ -6,6 +6,7 @@ import { Home } from '@mui/icons-material';
 import {useNavigate} from "react-router-dom";
 import './gamePage.css'
 import Carousel from "react-material-ui-carousel";
+import GameCardDescription from "../GameCardDescription/GameCardDescription";
 
 const GamePage = () => {
 
@@ -38,18 +39,7 @@ const GamePage = () => {
                         </Button>
                     </div>
                     <div className='game-card-wrapper'>
-                        <img src={game?.thumbnail}/>
-                        <h1>{game?.title}</h1>
-                        <p>Дата выхода: {game?.release_date}</p>
-                        <p>Жанр: {game?.genre}</p>
-                        <p>Разработчик: {game?.developer}</p>
-                        <p>Издатель: {game?.publisher}</p>
-                        <p>Минимальные системные требования:</p>
-                        <p>Процессор: {game?.minimum_system_requirements.processor}</p>
-                        <p>Видеокарта: {game?.minimum_system_requirements.graphics}</p>
-                        <p>Оперативная память: {game?.minimum_system_requirements.memory}</p>
-                        <p>Место на диске: {game?.minimum_system_requirements.storage}</p>
-                        <p>Операционная система: {game?.minimum_system_requirements.os}</p>
+                        <GameCardDescription/>
                         <Carousel>
                             {game?.screenshots.map((index) => (
                                 <img src={index.image} key={index.id}/>
