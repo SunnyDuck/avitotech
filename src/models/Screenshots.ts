@@ -1,4 +1,4 @@
-export interface IScreenshots{
+export interface Screenshots {
     id: number,
     image: string
 }

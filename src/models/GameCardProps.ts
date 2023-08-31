@@ -1,4 +1,4 @@
-export interface IGameCardProps {
+export interface GameCardProps {
     gameName: string,
     thumbnail: string,
     developer: string,

@@ -1,8 +1,8 @@
 import './GameCard.css'
-import {IGameCardProps} from "../../models/IGameCardProps";
+import {GameCardProps} from "../../models/GameCardProps";
 import {useNavigate} from "react-router-dom";
 
-const GameCard = (props: IGameCardProps) => {
+const GameCard = (props: GameCardProps) => {
 
     const navigate = useNavigate();
     return (

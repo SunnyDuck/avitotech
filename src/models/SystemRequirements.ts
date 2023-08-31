@@ -1,4 +1,4 @@
-export interface ISystemRequirements{
+export interface SystemRequirements {
     os: string,
     processor: string,
     memory: string,

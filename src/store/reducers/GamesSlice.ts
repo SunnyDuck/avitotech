@@ -1,8 +1,8 @@
-import {IGame} from "../../models/IGame";
+import {Game} from "../../models/Game";
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {IGameState} from "../../models/IGameState";
+import {GameState} from "../../models/GameState";
 
-const initialState: IGameState = {
+const initialState: GameState = {
     games: [ ],
     platforms: [ ],
     genre: [ ],
@@ -17,7 +17,7 @@ export const gamesSlice = createSlice({
         gamesFetching(state) {
             state.loading = true;
         },
-        gamesFetchingSuccess(state, action: PayloadAction<IGame>) {
+        gamesFetchingSuccess(state, action: PayloadAction<Game>) {
             state.loading = false;
             state.games = action.payload
             state.games.forEach((game) => {

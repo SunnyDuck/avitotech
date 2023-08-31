@@ -3,7 +3,7 @@ import {Autocomplete, TextField} from "@mui/material";
 import {useAppDispatch, useAppSelector} from "../../hooks/redux";
 import './Header.css'
 import {fetchFiltersGames} from "../../store/reducers/ActionCreator";
-import {IFilters} from "../../models/IFilters";
+import {Filters} from "../../models/Filters";
 import {GenreTagsList} from "../../models/GenreTagsList";
 import {SortedGamesTagsList} from "../../models/SortedGamesTagsList";
 
@@ -15,7 +15,7 @@ const Header = () => {
 
 
     const {platforms} = useAppSelector(state => state.gamesReducer)
-    const [filters, setFilters] = useState<IFilters>({
+    const [filters, setFilters] = useState<Filters>({
         selectedGenre: null,
         selectedPlatform: null,
         selectedReleaseDate: null

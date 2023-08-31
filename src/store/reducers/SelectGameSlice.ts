@@ -1,8 +1,8 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {ISelectGameState} from "../../models/ISelectGameState";
-import {IGame} from "../../models/IGame";
+import {SelectGameState} from "../../models/SelectGameState";
+import {Game} from "../../models/Game";
 
-const initialState: ISelectGameState = <ISelectGameState>{
+const initialState: SelectGameState = <SelectGameState>{
     game: null,
     loading: false,
     error: ''
@@ -16,7 +16,7 @@ export const selectGameSlice = createSlice({
             state.loading = true;
             state.game = null
         },
-        gameFetchingSuccess(state, action: PayloadAction<IGame>) {
+        gameFetchingSuccess(state, action: PayloadAction<Game>) {
             state.loading = false;
             state.game = action.payload
             state.error = ''

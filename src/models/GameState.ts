@@ -1,7 +1,7 @@
-import {IGame} from "./IGame";
+import {Game} from "./Game";
 
-export interface IGameState {
-    games: IGame[],
+export interface GameState {
+    games: Game[],
     platforms: string[],
     genre: string[],
     loading: boolean,

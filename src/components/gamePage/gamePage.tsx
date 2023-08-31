@@ -40,16 +40,16 @@ const GamePage = () => {
                     <div className='game-card-wrapper'>
                         <img src={game?.thumbnail}/>
                         <h1>{game?.title}</h1>
-                        <h3>Дата выхода: {game?.release_date}</h3>
-                        <h3>Жанр: {game?.genre}</h3>
-                        <h3>Разработчик: {game?.developer}</h3>
-                        <h3>Издатель: {game?.publisher}</h3>
-                        <h3>Минимальные системные требования:</h3>
-                        <h4>Процессор: {game?.minimum_system_requirements.processor}</h4>
-                        <h4>Видеокарта: {game?.minimum_system_requirements.graphics}</h4>
-                        <h4>Оперативная память: {game?.minimum_system_requirements.memory}</h4>
-                        <h4>Место на диске: {game?.minimum_system_requirements.storage}</h4>
-                        <h4>Операционная система: {game?.minimum_system_requirements.os}</h4>
+                        <p>Дата выхода: {game?.release_date}</p>
+                        <p>Жанр: {game?.genre}</p>
+                        <p>Разработчик: {game?.developer}</p>
+                        <p>Издатель: {game?.publisher}</p>
+                        <p>Минимальные системные требования:</p>
+                        <p>Процессор: {game?.minimum_system_requirements.processor}</p>
+                        <p>Видеокарта: {game?.minimum_system_requirements.graphics}</p>
+                        <p>Оперативная память: {game?.minimum_system_requirements.memory}</p>
+                        <p>Место на диске: {game?.minimum_system_requirements.storage}</p>
+                        <p>Операционная система: {game?.minimum_system_requirements.os}</p>
                         <Carousel>
                             {game?.screenshots.map((index) => (
                                 <img src={index.image} key={index.id}/>
