@@ -11,16 +11,6 @@
 
 .escape-button{
     width: 200px;
-    height: 50px;
-}
-
-.game-card-wrapper{
-    width: 800px;
     justify-items: center;
     text-align: center;
-}
-
-img{
-    width: 800px;
-    margin-top: 1%;
 }
