@@ -29,6 +29,7 @@ export const fetchGames = () => async (dispatch: AppDispatch) => {
 
 export const fetchFiltersGames = (filters: IFilters) => async (dispatch: AppDispatch) => {
     try {
+        dispatch(gamesSlice.actions.gamesFetching())
         const response = await instance.get('', {
             params: {
                 platform: filters.selectedPlatform,
@@ -36,7 +37,6 @@ export const fetchFiltersGames = (filters: IFilters) => async (dispatch: AppDisp
                 'sort-by': filters.selectedReleaseDate
             }
         });
-        dispatch(gamesSlice.actions.gamesFetching())
         dispatch(gamesSlice.actions.gamesFetchingSuccess(response.data))
     } catch (e) {
         alert(e.message)
@@ -47,12 +47,12 @@ export const fetchFiltersGames = (filters: IFilters) => async (dispatch: AppDisp
 
 export const fetchGame = (id: number) => async (dispatch: AppDispatch) => {
     try{
+        dispatch(selectGameSlice.actions.gameFetching())
         const response = await instance.get(urlForOneGame, {
             params: {
                 id: String(id)
             }
         })
-        dispatch(selectGameSlice.actions.gameFetching())
         dispatch(selectGameSlice.actions.gameFetchingSuccess(response.data))
     }catch (e) {
         alert(e.message)

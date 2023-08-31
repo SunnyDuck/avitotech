@@ -4,7 +4,7 @@ import {IGame} from "../../models/IGame";
 
 const initialState: ISelectGameState = <ISelectGameState>{
     game: null,
-    loading: true,
+    loading: false,
     error: ''
 }
 

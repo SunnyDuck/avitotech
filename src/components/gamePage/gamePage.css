@@ -2,6 +2,7 @@
     display: grid;
     justify-content: center;
     background-color: rgb(51, 56, 61);
+    height: 200%;
 }
 
 .escape-button-wrapper{

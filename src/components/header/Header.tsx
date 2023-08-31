@@ -33,7 +33,7 @@ const Header = () => {
             <Autocomplete
                 id="combo-box-demo"
                 options={platforms}
-                sx={{ width: '33%' }}
+                sx={{ width: '20%' }}
                 renderInput={(params) =>
                     <TextField
                         fullWidth
@@ -64,7 +64,7 @@ const Header = () => {
             <Autocomplete
                 id="combo-box-demo2"
                 options={Object.values(GenreTagsList)}
-                sx={{ width: '33%' }}
+                sx={{ width: '20%' }}
                 renderInput={(params) =>
                     <TextField
                         fullWidth
@@ -78,7 +78,7 @@ const Header = () => {
             <Autocomplete
                 id="combo-box-demo3"
                 options={Object.values(SortedGamesTagsList)}
-                sx={{ width: '33%' }}
+                sx={{ width: '20%' }}
                 renderInput={(params) =>
                     <TextField
                         fullWidth

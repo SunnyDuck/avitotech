@@ -6,7 +6,7 @@ const initialState: IGameState = {
     games: [ ],
     platforms: [ ],
     genre: [ ],
-    loading: true,
+    loading: false,
     error: ''
 }
 
