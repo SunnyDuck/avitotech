@@ -1,17 +1,12 @@
 import './GameCard.css'
+import {IGameCardProps} from "../../models/IGameCardProps";
+import {useNavigate} from "react-router-dom";
 
-interface gameCardProps {
-    gameName: string,
-    thumbnail: string,
-    developer: string,
-    releaseDate: string,
-    genre: string
-}
+const GameCard = (props: IGameCardProps) => {
 
-const GameCard = (props: gameCardProps) => {
-
+    const navigate = useNavigate();
     return (
-        <div className='card-wrapper'>
+        <div className='card-wrapper' onClick={() => navigate('card/' + props.gameName, { state: { cardId: props.id } })}>
             <img src= {props.thumbnail}/>
             <div className='card-game-name'>
                 {props.gameName}

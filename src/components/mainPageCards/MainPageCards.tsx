@@ -6,7 +6,8 @@ import './MainPageCards.css'
 
 const MainPageCards = () => {
 
-    const {games, loading} = useAppSelector(state => state.gameReducer)
+    const {games, loading} = useAppSelector(state => state.gamesReducer)
+
 
     return (
         <div>
@@ -23,6 +24,7 @@ const MainPageCards = () => {
                             developer={game.developer}
                             releaseDate = {game.release_date}
                             genre = {game.genre}
+                            id = {game.id}
                         />
                     })}
                 </div>

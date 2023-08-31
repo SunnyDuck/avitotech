@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 import {Autocomplete, TextField} from "@mui/material";
 import {useAppDispatch, useAppSelector} from "../../hooks/redux";
 import './Header.css'
@@ -12,7 +12,9 @@ import {SortedGamesTagsList} from "../../models/SortedGamesTagsList";
 
 const Header = () => {
 
-    const {platforms} = useAppSelector(state => state.gameReducer)
+
+
+    const {platforms} = useAppSelector(state => state.gamesReducer)
     const [filters, setFilters] = useState<IFilters>({
         selectedGenre: null,
         selectedPlatform: null,

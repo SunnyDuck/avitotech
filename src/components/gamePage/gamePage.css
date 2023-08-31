@@ -1,0 +1,26 @@
+.game-page-wrapper{
+    display: grid;
+    justify-content: center;
+    background-color: rgb(51, 56, 61);
+}
+
+.escape-button-wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.escape-button{
+    width: 200px;
+    height: 50px;
+}
+
+.game-card-wrapper{
+    width: 800px;
+    justify-items: center;
+    text-align: center;
+}
+
+img{
+    width: 800px;
+    margin-top: 1%;
+}
